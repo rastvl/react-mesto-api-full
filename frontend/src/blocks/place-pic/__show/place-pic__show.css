@@ -1,0 +1,5 @@
+.place-pic__show {
+    max-width: 75vw;
+    max-height: 75vh;
+    display: block;
+}

@@ -1,0 +1,10 @@
+.popup__close_place-pic {
+    padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .popup__close_place-pic {
+        right: -6px;
+        top: -42px;
+    }
+}

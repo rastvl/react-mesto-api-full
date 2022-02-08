@@ -1,0 +1,16 @@
+.header__redirect {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 0 30px;
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+}
+
+.header__redirect:hover {
+  cursor: pointer;
+  opacity: .6;
+}

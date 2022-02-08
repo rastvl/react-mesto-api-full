@@ -1,0 +1,10 @@
+.registration-auth-link__link {
+  text-decoration: none;
+  color: #fff;
+  transition: opacity .3s ease-in;
+}
+
+.registration-auth-link__link:hover {
+  cursor: pointer;
+  opacity: .6;
+}
