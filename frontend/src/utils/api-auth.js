@@ -44,4 +44,4 @@ export const getContent = (token) => {
   }).then((res) => checkResponse(res));
 };
 
-export const baseUrl = "http://api.rastvl.students.nomoredomains.xyz";
+export const baseUrl = "https://api.rastvl.students.nomoredomains.xyz";
