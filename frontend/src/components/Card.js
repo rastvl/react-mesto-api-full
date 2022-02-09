@@ -6,13 +6,13 @@ import { cardSelectors } from './../utils/domElements.js'
 const Card = (props) => {
   const currentUser = useContext(CurrentUserContext);
 
-  const isOwn = props.card.owner._id === currentUser._id;
+  const isOwn = props.card.owner === currentUser._id;
   // Создаём переменную, которую после зададим в `className` для кнопки удаления
   const cardDeleteButtonClassName = `${cardSelectors.cardTrashIconSelector} ${
       isOwn ? cardSelectors.cardTrashIconShow : ''
   }
   `;
-  const isLiked = props.card.likes.some(i => i._id === currentUser._id);
+  const isLiked = props.card.likes.some(i => i === currentUser._id);
   const cardLikeButtonClassName = `${cardSelectors.cardLikeBtn} ${isLiked ? cardSelectors.cardLikeBtnActive : ''}`;
 
   const handleCardClick = _ => {

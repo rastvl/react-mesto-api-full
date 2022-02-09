@@ -63,7 +63,6 @@ const App = () => {
       apiAuth
         .getContent(token)
         .then((res) => {
-          console.log(res);
           if (res) {
             setUserEmail(res["email"]);
             setLoggedIn(true);
@@ -80,7 +79,7 @@ const App = () => {
 
   const handleCardLike = (card) => {
     // Снова проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((i) => i === currentUser._id);
 
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api
@@ -130,6 +129,7 @@ const App = () => {
     api
       .addCard(inputs.title, inputs.link)
       .then((cardInfo) => {
+        console.log(cardInfo);
         setCards([cardInfo, ...cards]);
         closeAllPopups();
       })

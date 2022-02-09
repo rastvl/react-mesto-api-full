@@ -13,9 +13,7 @@ const handleError = (err, next) => {
 const getCards = (req, res, next) => {
   Card.find({})
     .then((cards) => {
-      res.send({
-        data: cards,
-      });
+      res.send(cards);
     })
     .catch(() => next(new ServerError()));
 };
@@ -45,8 +43,8 @@ const deleteCard = (req, res, next) => {
   Card.findById(cardId)
     .then((card) => {
       if (card) {
-        if (card.owner.equals(req.user._id)) { // (card.owner._id.toString() !== req.user._id)
-          throw new ForbiddenError('Карторчка не ваша');
+        if (!card.owner.equals(req.user._id)) { // (card.owner._id.toString() !== req.user._id)
+          throw new ForbiddenError('Карточка не ваша');
         }
         Card.findByIdAndDelete(cardId).then((cardData) => {
           res.send(cardData);
