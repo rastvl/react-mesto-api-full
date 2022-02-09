@@ -175,7 +175,7 @@ const App = () => {
         history.push("/signin");
       })
       .catch((err) => {
-        console.log(err);
+        alert('Данный email уже зарегистрирован!');
         setIsRegistered(false);
       });
   };
@@ -188,6 +188,9 @@ const App = () => {
         setLoggedIn(true);
         setUserEmail(email);
         history.push("/");
+        api.getInitialCards().then((cards) => {
+          setCards(cards);
+        });
       })
       .catch((err) => {
         console.log(err);
